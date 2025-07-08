@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/StudentProfile.css';
-import studentImg from '../Assets/StudentProfile.png';
-import backgroundImage from '../Assets/BG.png';
+import studentImg from '../assets/StudentProfile.png';
+import backgroundImage from '../assets/BG.png';
 import MaleIcon from '@mui/icons-material/Male';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
@@ -32,7 +32,7 @@ const StudentProfile = ({ onToggle }) => {
       <div
         className="student-card bg-white border rounded-4 p-3 pb-0 position-absolute"
         style={{
-          width: isExpanded ? '100%' : '26vw',
+          width: isExpanded ? '95.5%' : '24vw',
           right: '0',
           transition: 'width 0.3s ease, right 0.3s ease',
           zIndex: 1000,

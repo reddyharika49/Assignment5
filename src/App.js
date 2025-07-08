@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 
 import './App.css';
+import { useState } from 'react';
 import Header from './components/Header';
 import Sidebar from './components/sideBar';
 import Main from './components/Main';
@@ -9,9 +10,12 @@ import { Routes,Route, BrowserRouter } from 'react-router-dom';
 import Payments from './components/payments';
 import PaymentTable from './components/paymentTable';
 import PaymentDetails from './components/PaymentDetails';
+import StudentProfile from './components/studentProfile';
 
 
 function App() {
+  const [isProfileExpanded, setIsProfileExpanded] = useState(false);
+
   return (
     <BrowserRouter>
     <div className="App">
@@ -22,9 +26,16 @@ function App() {
         <div className="sideBar border" style={{width:'4%'}}>
           <Sidebar/>
         </div>
-        <div className='main_body d-flex flex-row' style={{ width: '100%', transition: 'margin-left 0.3s ease, width 0.3s ease' }}>
-            {/* <Main/> */}
-            <div className='main_left'style={{width:'75%'}}>
+        <div className='main_body d-flex flex-column' style={{ width: '100%', transition: 'margin-left 0.3s ease, width 0.3s ease' }}>
+            <div className='studentInfo'><StudentProfile onToggle={setIsProfileExpanded} />
+</div>
+            <div className='body d-flex flex-row'>
+            <div className='main_left' style={{
+    width: '75%',
+    transform: isProfileExpanded ? 'translateY(190px)' : 'translateY(0)',
+    transition: 'transform 0.3s ease-in-out',
+    zIndex: 1,
+  }}>
             <TopNav/>
              <Routes>
               {/* <Route path="/" element={<Navigate to="/payments" />} /> */}
@@ -53,6 +64,7 @@ function App() {
             <div className='main_right' style={{backgroundColor:"white",width:"25%"}}>
             <PaymentDetails/>
             </div>
+        </div>
         </div>
       </div>
 
