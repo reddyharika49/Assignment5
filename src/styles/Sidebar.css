@@ -1,0 +1,83 @@
+.custom-active {
+  background-color: #3425FF !important;
+  color: white;
+  padding-left: 10px; /* Left padding for space */
+  padding-right: 10px; /* Right padding for space */
+  border-radius: 8px; /* Maintain rounded corners */
+}
+ 
+.sidebar {
+  width: 60px;
+  height: 100%;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  position: fixed;
+  left: 0;
+  /* top: 60px; */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontally center the items */
+  padding: 0px 0; /* Add padding for better spacing */
+  overflow: hidden; /* Prevent content overflow during transition */
+}
+ 
+.sidebar:hover {
+  width: 200px;
+}
+ 
+.d-flex.align-items-center.gap-2 {
+  height: 40px;
+  width: 100%; /* Ensure full width for hover effect */
+  border-radius: 8px;
+  padding: 0 0px;
+  transition: all 0.3s ease;
+  align-items: center;
+  justify-content: flex-start; /* Align icon and text to the left */
+  margin: 0px 0; /* Even spacing between items */
+}
+ 
+.d-flex.align-items-center.gap-2 span:nth-child(1) { /* Target the icon span */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  transition: margin 0.3s ease; /* Smooth margin adjustment */
+  margin-right: 10px; /* Space between icon and text */
+}
+ 
+.d-flex.align-items-center.gap-2 span:nth-child(2) {
+  display: none;
+  font-weight: 400;
+  font-size: 14px;
+  color: #595E6C;
+  margin-left: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease; /* Smooth text appearance */
+}
+ 
+.sidebar:hover .d-flex.align-items-center.gap-2 span:nth-child(2) {
+  display: inline;
+  color: #595E6C;
+  opacity: 1; /* Start visible when sidebar expands */
+}
+ 
+.sidebar:hover .d-flex.align-items-center.gap-2:hover span:nth-child(2) {
+  color: white;
+  font-weight: 700;
+}
+ 
+.sidebar:hover .d-flex.align-items-center.gap-2:hover {
+  /* background-color: #4A90E2; */
+}
+ 
+.sidebar:hover .d-flex.align-items-center.gap-2 span:nth-child(1) {
+  margin-right: 10px; /* Maintain spacing on hover */
+}
+ 
+@media (min-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+ 
+  .sidebar:hover {
+    width: 200px;
+  }
+}

@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sideBar {
+  position: relative;
+  height: 100%;
+  z-index: 1000; /* Ensure sidebar stays above content */
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+ 
+.main_body {
+  margin-left: 60px; /* Default margin to match sidebar's default width (60px) */
+  padding: 0px; /* Optional padding for content */
+  /* height: 100%;  */
+  transition: margin-left 0.3s ease, width 0.3s ease; /* Smooth transition */
+  width: calc(100% - 60px); /* Default width, accounting for sidebar */
+  overflow-y: auto;
+}
+ 
+#app_body .sideBar:hover ~ .main_body {
+  margin-left: 150px; /* Shift content when sidebar expands to 200px */
+  width: calc(100% - 200px); /* Adjust width for expanded sidebar */
+}
+ 
+/* Reset to fully left and full width when sidebar shrinks */
+.main_body {
+  margin-left: 0; /* Fully shift left when not hovered */
+  width: 100%; /* Expand to full width when sidebar shrinks */
+}
+ 
+/* Optional: Prevent body overflow */
+body {
+  overflow-x: hidden;
+}
+ 
+/* Remove any gap from flex */
+#app_body {
+  gap: 0; /* Ensure no extra space between sidebar and content */
+}
+.table-responsive {
+  box-shadow: none !important;
+}
+@media (max-width: 1220px) {
+  #app_body {
+    flex-direction: column;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .sideBar {
+    width: 100%;
+    height: auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  .main_body {
+    margin-left: 50px;
+    width: 100%;
   }
+  #app_body {
+  min-width: 320px;
+}
+#app_body .sideBar:hover ~ .main_body {
+  margin-left: 210px; /* Shift content when sidebar expands to 200px */
+  width: calc(100% - 200px); /* Adjust width for expanded sidebar */
+}
+
 }
