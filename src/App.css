@@ -37,6 +37,7 @@ body {
 .table-responsive {
   box-shadow: none !important;
 }
+
 @media (max-width: 1220px) {
   #app_body {
     flex-direction: column;

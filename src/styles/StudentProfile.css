@@ -1,4 +1,10 @@
 /* StudentProfile.css */
+.student-profile {
+  font-family: "'Inter', sans-serif";
+}
+.student-info{
+ font-family: "'Inter', sans-serif";
+}
 .custom-switch {
   position: relative;
   display: inline-block;
@@ -35,6 +41,7 @@
   border-radius: 50%;
   transition: 0.4s;
 }
+
 
 input:checked + .slider {
   background-color: #BAD7FF; /* same or change if you want */

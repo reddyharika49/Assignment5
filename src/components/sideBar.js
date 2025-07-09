@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "../styles/Sidebar.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
  
-const Sidebar = () => {
+const Sidebar = ({ isExpanded }) => {
   const [activeItem, setActiveItem] = useState('Students');
  
   const handleItemClick = (item) => {
@@ -10,6 +10,7 @@ const Sidebar = () => {
   };
  
   return (
+    <div className={`sidebar ${isExpanded ? 'expanded' : ''}`}>
     <div className="sidebar border-end">
       <div className="p-3 d-flex flex-column gap-1">
         <div
@@ -243,6 +244,7 @@ const Sidebar = () => {
             HRMS
           </span>
         </div>
+      </div>
       </div>
     </div>
   );

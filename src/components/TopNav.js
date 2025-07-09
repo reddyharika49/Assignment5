@@ -45,6 +45,7 @@ const TopNav = () => {
           whiteSpace: 'nowrap',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
+
         }}
       >
         {navItems.map((item) => (
@@ -54,7 +55,7 @@ const TopNav = () => {
             className={({ isActive }) =>
               `d-inline-block me-3 text-decoration-none px-2 py-1 rounded ${
                 isActive
-                  ? 'text-primary bg-white rounded-2 shadow-sm fw-bold'
+                  ? 'nav_link_active  bg-white rounded-2 shadow-sm fw-bold'
                   : 'text-dark fw-normal'
               }`
             }
